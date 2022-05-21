@@ -8,6 +8,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Ola {id(self)}'
 
+    @staticmethod         #decoretor
+    def metodo_estatico():
+        return 42
+
+    @classmethod         #decoretor acessar aclasse q esta execuntando metodo
+    def nome_e_atributos_de_classe(cls): # cls faz aluzao a classe Pessoa
+        return f'{cls} - olhos {cls.olhos}'
+
 if __name__=='__main__':
     renzo = Pessoa(nome='Renzo')
     luciano = Pessoa(renzo,nome='luciano')
@@ -29,6 +37,8 @@ if __name__=='__main__':
     print(luciano.olhos)
     print(renzo.olhos)
     print(id(Pessoa.olhos),id(luciano.olhos),id(renzo.olhos))
+    print(Pessoa.metodo_estatico(),luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
 
 
 
