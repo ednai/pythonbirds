@@ -110,6 +110,7 @@ class FaseTestes(TestCase):
         passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros
         fase.adicionar_porco(*porcos)
         fase.adicionar_passaro(*passaros)
+
         self.assertEqual(EM_ANDAMENTO, fase.status())
 
         for ator in porcos + passaros:
